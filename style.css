@@ -184,6 +184,45 @@ body {
 .mynavbar .nav-link {
   text-transform: uppercase;
 }
+/* Styling untuk bunga jatuh */
+#falling-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999; /* Pastikan bunga berada di atas elemen lain */
+}
+
+.flower {
+  position: absolute;
+  top: -50px;
+  width: 30px;
+  height: 30px;
+  background-image: url('https://i.postimg.cc/ZKktCFYV/flower-petal.png'); /* Gambar bunga online */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall 10s linear infinite, sway 4s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+/* Animasi jatuh */
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Animasi gerakan samping ke samping */
+@keyframes sway {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
 
 .home {
   background-image: url(img/bagu.png);
@@ -194,6 +233,25 @@ body {
   margin-top: -6rem;
   padding-top: 15rem;
   padding-bottom: 5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    background-size: contain; /* Agar gambar lebih sesuai dengan layar kecil */
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+    margin-top: -4rem; /* Kurangi margin untuk layar yang lebih kecil */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home {
+    background-size: contain;
+    background-position: top; /* Sesuaikan posisi gambar di layar kecil */
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+    margin-top: -3rem; /* Kurangi margin lebih jauh untuk layar yang sangat kecil */
+  }
 }
 
 

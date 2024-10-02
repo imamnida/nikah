@@ -182,6 +182,7 @@
             <img src="img/gallery/thumbnail/6.png" alt="Sandhika & Nofa 6" class="img-fluid w-100 rounded">
           </a>
         </div>
+        
       </div>
     </div>
   </section>
@@ -193,7 +194,9 @@
         <div class="col-md-8 col-10 text-center">
           <span>ungkapan tanda kasih</span>
           <h2>Kirim Hadiah</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam iure perferendis provident ab aliquam nemo.
+          <p>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.
+
+
           </p>
         </div>
       </div>
@@ -210,10 +213,7 @@
               1816377882 - JAELANI JAELANI
 
             </li>
-            <li class="list-group-item">
-              <div class="fw-bold">Saweria</div>
-              <img src="img/saweria.png" alt="Saweria QR" class="img-thumbnail" width="150">
-            </li>
+            
           </ul>
         </div>
       </div>
@@ -241,13 +241,15 @@
 
   <div id="audio-container">
     <audio id="song" autoplay loop>
-      <source src="audio/ini.mp4" type="audio/mp3">
+      <source src="audio/i mni.mp4" type="audio/mp3">
     </audio>
 
     <div class="audio-icon-wrapper" style="display: none;">
       <i class="bi bi-disc"></i>
     </div>
   </div>
+
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -355,6 +357,33 @@
 
   </script>
   <script>
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+  
+      // Tentukan posisi bunga secara acak di sepanjang lebar layar
+      flower.style.left = Math.random() * 100 + 'vw';
+      
+      // Tentukan ukuran acak untuk bunga
+      flower.style.width = flower.style.height = Math.random() * 20 + 20 + 'px';
+      
+      // Tentukan durasi jatuh acak untuk setiap bunga
+      flower.style.animationDuration = Math.random() * 3 + 7 + 's'; // antara 7s hingga 10s
+      
+      // Tambahkan bunga ke elemen jatuh
+      document.getElementById('falling-flowers').appendChild(flower);
+      
+      // Hapus bunga setelah animasi selesai
+      setTimeout(() => {
+        flower.remove();
+      }, 10000); // Sesuaikan durasi sesuai dengan animasi
+    }
+  
+    // Buat bunga secara berkala
+    setInterval(createFlower, 500); // Bunga baru muncul setiap 500ms
+  </script>
+  
+  <script>
     const urlParams = new URLSearchParams(window.location.search);
     const nama = urlParams.get('n') || '';
     const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
@@ -387,6 +416,7 @@
     document.addEventListener('scroll', onScroll);
     window.addEventListener('load', onScroll);
   </script>
+  
   
 </body>
 
