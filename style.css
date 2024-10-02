@@ -700,5 +700,108 @@ footer li {
     font-size: 0.8em;
   }
 }
+/* Main Section Styling */
+.baru {
+  background-color: #f9f9f9;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeIn 1s ease-out forwards; /* Fade in effect */
+}
+
+/* Heading Styling */
+.baru h2 {
+  color: var(--pink);
+  font-family: 'Sacramento', cursive;
+  font-size: 5rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: slideInText 1.5s ease-out forwards; /* Text slide-in effect */
+  animation-delay: 0.5s;
+}
+
+/* Subheading Styling */
+.baru h3 {
+  color: #444;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: slideInText 1.5s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+/* Paragraph Styling */
+.baru p {
+  font-size: 1.1rem;
+  color: #666;
+  opacity: 0;
+  animation: slideInText 1.5s ease-out forwards;
+  animation-delay: 0.9s;
+}
+
+/* Couple Image Section */
+.baru .couple {
+  margin-top: 100px;
+}
+
+/* Couple Image Heading */
+.baru .couple h3 {
+  font-family: 'Sacramento';
+  font-size: 2.4rem;
+  color: var(--pink);
+}
+
+/* Square Image Styling */
+.baru .couple img {
+  width: 100%;
+  border-radius: 0; /* Ensure image is square */
+  opacity: 0;
+  transform: scale(0.8);
+  animation: scaleUp 1.5s ease-out forwards; /* Image scale-up animation */
+  animation-delay: 1s;
+}
+
+/* Heart Icon Styling */
+.baru .heart {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(65px);
+}
+
+/* Heart Icon */
+.baru .heart i {
+  margin: auto;
+  color: var(--pink);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 /* ... (rest of the previous CSS code remains the same) ... */
