@@ -23,15 +23,15 @@ body {
   z-index: -1;
 
 }
-/* CSS untuk animasi ketika gambar di-scroll */
+/* CSS dasar untuk gambar sebelum animasi */
 #gallery .col img {
   opacity: 0;
   transform: scale(0.5);
-  transition: all 0.8s ease-out;
+  transition: all 1.5s ease-out; /* Lebih lambat */
 }
 
 /* Keyframes untuk berbagai efek */
-@keyframes rotateIn {
+@keyframes rotateInSlow {
   0% {
     opacity: 0;
     transform: rotate(-360deg) scale(0.5);
@@ -42,11 +42,11 @@ body {
   }
 }
 
-@keyframes blurIn {
+@keyframes blurInSlow {
   0% {
     opacity: 0;
-    filter: blur(10px);
-    transform: scale(0.8);
+    filter: blur(15px);
+    transform: scale(0.5);
   }
   100% {
     opacity: 1;
@@ -55,10 +55,10 @@ body {
   }
 }
 
-@keyframes fadeIn {
+@keyframes fadeInSlow {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
@@ -66,38 +66,69 @@ body {
   }
 }
 
-/* Memicu animasi ketika elemen terlihat di layar */
+@keyframes zoomInSlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeftSlow {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRightSlow {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 #gallery .col img.in-view:nth-child(1) {
-  animation: rotateIn 1s forwards;
+  animation: rotateInSlow 2s forwards;
 }
 
 #gallery .col img.in-view:nth-child(2) {
-  animation: blurIn 1s forwards;
+  animation: blurInSlow 2s forwards;
 }
 
 #gallery .col img.in-view:nth-child(3) {
-  animation: fadeIn 1s forwards;
+  animation: fadeInSlow 2.5s forwards;
 }
 
 #gallery .col img.in-view:nth-child(4) {
-  animation: rotateIn 1s forwards;
+  animation: zoomInSlow 2s forwards;
 }
 
 #gallery .col img.in-view:nth-child(5) {
-  animation: blurIn 1s forwards;
+  animation: slideInLeftSlow 2s forwards;
 }
 
 #gallery .col img.in-view:nth-child(6) {
-  animation: fadeIn 1s forwards;
+  animation: slideInRightSlow 2s forwards;
 }
 
-/* Memastikan gambar kembali normal saat tidak di-scroll */
+/* Memastikan gambar tetap muncul saat dilihat */
 .in-view {
   opacity: 1;
   transform: scale(1);
 }
-
-/* Tambahan JavaScript untuk menambahkan kelas 'in-view' saat gambar terlihat */
 
 .hero {
   position: relative;
@@ -157,11 +188,14 @@ body {
 .home {
   background-image: url(img/bagu.png);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   margin-top: -6rem;
   padding-top: 15rem;
   padding-bottom: 5rem;
 }
+
 
 .home h2,
 .info h2,
