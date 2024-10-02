@@ -660,3 +660,45 @@ footer li {
     top: 31px;
   }
 }
+/* ... (previous CSS code remains the same) ... */
+
+/* Snow effect */
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #000;
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  user-select: none;
+  cursor: default;
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.snowflake:nth-of-type(odd) {
+  animation-duration: 15s;
+}
+
+.snowflake:nth-of-type(even) {
+  animation-duration: 12s;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .snowflake {
+    font-size: 0.8em;
+  }
+}
+
+/* ... (rest of the previous CSS code remains the same) ... */

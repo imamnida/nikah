@@ -416,6 +416,25 @@
     document.addEventListener('scroll', onScroll);
     window.addEventListener('load', onScroll);
   </script>
+  <script>function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.textContent = '❄';
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.animationDuration = Math.random() * 3 + 5 + 's'; // Between 5-8 seconds
+    snowflake.style.opacity = Math.random();
+    snowflake.style.fontSize = Math.random() * 10 + 10 + 'px'; // Between 10-20px
+  
+    document.body.appendChild(snowflake);
+  
+    // Remove the snowflake after its animation duration
+    setTimeout(() => {
+      snowflake.remove();
+    }, parseFloat(snowflake.style.animationDuration) * 1000);
+  }
+  
+  // Create snowflakes at regular intervals
+  setInterval(createSnowflake, 200);</script>
   
   
 </body>
